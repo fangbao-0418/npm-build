@@ -13,7 +13,8 @@
   },
   "files": [
     "lib",
-    "tsconfig.json"
+    "tsconfig.json",
+    ".babelrc"
   ],
   "dependencies": {
     "@babel/cli": "^7.17.6",
