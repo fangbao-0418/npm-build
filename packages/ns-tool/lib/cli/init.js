@@ -1,16 +1,19 @@
+#!/usr/bin/env node
+
 const spawn = require('cross-spawn');
 const path = require('path');
 const fs = require('fs-extra');
 const program = require('commander');
-var chalk = require('chalk');
+const chalk = require('chalk');
+const defaultTemplateName = 'ant-template'
 program.parse(process.argv);
-const templateName = program.args?.[0] || 'ant-template'
+const templateName = program.args ? (program.args[0] || defaultTemplateName) : defaultTemplateName
 
 function init () {
   const appPath = process.cwd();
   const command = 'yarnpkg';
   let args;
-  const dependencies = ['ant-template']
+  const dependencies = [templateName]
   args = ['add', '--cwd', process.cwd(), '--exact'];
   [].push.apply(args, dependencies);
   

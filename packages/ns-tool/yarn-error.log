@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /Users/fb/.yarn/bin/yarnpkg add --cwd /Users/fb/Documents/npm-build-cli/packages/ns-tool --exact ant-template
+  /usr/local/bin/node /Users/fb/.yarn/bin/yarn.js init
 
 PATH: 
   /Users/fb/.yarn/bin:/Users/fb/.config/yarn/global/node_modules/.bin:/Users/fb/Downloads/apache-maven-3.6.3/bin:/Users/fb/.rvm/bin:/Users/fb/Downloads/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/Users/fb/.sdkman/candidates/springboot/current/bin:/Users/fb/.sdkman/candidates/gradle/current/bin:/Users/fb/.yarn/bin:/Users/fb/.config/yarn/global/node_modules/.bin:/Users/fb/Downloads/apache-maven-3.6.3/bin:/Users/fb/.rvm/bin:/Users/fb/Downloads/flutter/bin
@@ -14,22 +14,22 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npmjs.org/ant-template: Not found
-      at Request.params.callback [as _callback] (/Users/fb/.yarn/lib/cli.js:66988:18)
-      at Request.self.callback (/Users/fb/.yarn/lib/cli.js:140749:22)
-      at Request.emit (node:events:520:28)
-      at Request.<anonymous> (/Users/fb/.yarn/lib/cli.js:141721:10)
-      at Request.emit (node:events:520:28)
-      at IncomingMessage.<anonymous> (/Users/fb/.yarn/lib/cli.js:141643:12)
-      at Object.onceWrapper (node:events:639:28)
-      at IncomingMessage.emit (node:events:532:35)
-      at endReadableNT (node:internal/streams/readable:1346:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  Error: canceled
+      at Interface.<anonymous> (/Users/fb/.yarn/lib/cli.js:137009:13)
+      at Interface.emit (node:events:520:28)
+      at Interface._ttyWrite (node:readline:1081:16)
+      at ReadStream.onkeypress (node:readline:288:10)
+      at ReadStream.emit (node:events:520:28)
+      at emitKeys (node:internal/readline/utils:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:520:28)
+      at addChunk (node:internal/streams/readable:315:12)
 
 npm manifest: 
   {
     "name": "ns-tool",
-    "version": "1.0.1-alpha.8",
+    "version": "1.0.1-alpha.9",
     "main": "lib/cli/build.js",
     "license": "MIT",
     "bin": {
@@ -50,6 +50,7 @@ npm manifest:
       "@babel/plugin-transform-runtime": "^7.17.0",
       "@babel/preset-env": "^7.16.11",
       "@babel/preset-react": "^7.16.7",
+      "ant-template": "^1.0.1-alpha.0",
       "autoprefixer": "^10.4.4",
       "commander": "^9.1.0",
       "core-js": "^3.21.1",
@@ -67,10 +68,6 @@ npm manifest:
       "rollup-plugin-node-resolve": "^5.2.0",
       "rollup-plugin-uglify": "^6.0.4",
       "typescript": "^4.6.2"
-    },
-    "devDependencies": {
-      "@types/react": "^17.0.40",
-      "classnames": "^2.3.1"
     }
   }
 
@@ -1150,6 +1147,11 @@ Lockfile:
     version "0.1.0"
     resolved "https://registry.npmjs.org/ansi-wrap/-/ansi-wrap-0.1.0.tgz#a82250ddb0015e9a27ca82e82ea603bbfa45efaf"
     integrity sha1-qCJQ3bABXponyoLoLqYDu/pF768=
+  
+  ant-template@1.0.0:
+    version "1.0.0"
+    resolved "https://registry.npmjs.org/ant-template/-/ant-template-1.0.0.tgz#f170723db9ec772aab941ede16d384731f1ed9b4"
+    integrity sha512-hFrZlvf5ROMHhcsV+McRO471eZZGfnZvsZ4S1V3mmB7qcXtOwfo5jQKlETPLKMnwwIBMcZv3Edic/GBTRph3kw==
   
   anymatch@^2.0.0:
     version "2.0.0"

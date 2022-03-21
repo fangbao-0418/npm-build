@@ -1009,31 +1009,12 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
   integrity sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==
 
-"@types/prop-types@*":
-  version "15.7.4"
-  resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
-  integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
-
-"@types/react@^17.0.40":
-  version "17.0.41"
-  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.41.tgz#6e179590d276394de1e357b3f89d05d7d3da8b85"
-  integrity sha512-chYZ9ogWUodyC7VUTRBfblysKLjnohhFY9bGLwvnUFFy48+vB9DikmB3lW0qTFmBcKSzmdglcvkHK71IioOlDA==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
 "@types/resolve@0.0.8":
   version "0.0.8"
   resolved "https://registry.npmjs.org/@types/resolve/-/resolve-0.0.8.tgz#f26074d238e02659e323ce1a13d041eee280e194"
   integrity sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==
   dependencies:
     "@types/node" "*"
-
-"@types/scheduler@*":
-  version "0.16.2"
-  resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
-  integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
 ansi-colors@^1.0.1:
   version "1.1.0"
@@ -1071,10 +1052,10 @@ ansi-wrap@0.1.0, ansi-wrap@^0.1.0:
   resolved "https://registry.npmjs.org/ansi-wrap/-/ansi-wrap-0.1.0.tgz#a82250ddb0015e9a27ca82e82ea603bbfa45efaf"
   integrity sha1-qCJQ3bABXponyoLoLqYDu/pF768=
 
-ant-template@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/ant-template/-/ant-template-1.0.0.tgz#f170723db9ec772aab941ede16d384731f1ed9b4"
-  integrity sha512-hFrZlvf5ROMHhcsV+McRO471eZZGfnZvsZ4S1V3mmB7qcXtOwfo5jQKlETPLKMnwwIBMcZv3Edic/GBTRph3kw==
+ant-template@1.0.1-alpha.0:
+  version "1.0.1-alpha.0"
+  resolved "https://registry.npmjs.org/ant-template/-/ant-template-1.0.1-alpha.0.tgz#c4533237bd539a0c25ef23861ba8b6a08ce99ee2"
+  integrity sha512-GTYlRblVXBaLqOoZuJ9id0mjzCyhPkQTpnxc2KAvgrbIQa9NmNluitfWAi1jtfKpoQcn+gR6xdwSrX2Df6oHaw==
 
 anymatch@^2.0.0:
   version "2.0.0"
@@ -1440,11 +1421,6 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
-  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
-
 cliui@^3.2.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/cliui/-/cliui-3.2.0.tgz#120601537a916d29940f934da3b48d585a39213d"
@@ -1607,11 +1583,6 @@ cross-spawn@^7.0.3:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
-
-csstype@^3.0.2:
-  version "3.0.11"
-  resolved "https://registry.npmjs.org/csstype/-/csstype-3.0.11.tgz#d66700c5eacfac1940deb4e3ee5642792d85cd33"
-  integrity sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==
 
 d@1, d@^1.0.1:
   version "1.0.1"
