@@ -1,0 +1,42 @@
+{
+  "name": "ns-tool",
+  "version": "1.0.1-alpha.7",
+  "main": "lib/cli/build.js",
+  "license": "MIT",
+  "bin": {
+    "ns-build": "lib/cli/build.js"
+  },
+  "scripts": {
+    "build": "node lib/cli/build.js"
+  },
+  "files": [
+    "lib",
+    "tsconfig.json"
+  ],
+  "dependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "autoprefixer": "^10.4.4",
+    "commander": "^9.1.0",
+    "core-js": "^3.21.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^5.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.70.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "typescript": "^4.6.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.40",
+    "classnames": "^2.3.1"
+  }
+}
