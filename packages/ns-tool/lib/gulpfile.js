@@ -33,7 +33,7 @@ gulp.task('dist', async function (done) {
     ]
   })
   await bundle.write({
-    file: getOut(`/${appName}.js`),
+    file: getOut(`/dist/${appName}.js`),
     format: 'umd',
     name: 'library',
     exports: 'named',
@@ -50,7 +50,7 @@ gulp.task('less', function (cb) {
   gulp.src(getSrc('/**/*.less'))
     .pipe(less())
     .pipe(postcss([ autoprefixer() ]))
-    .pipe(gulp.dest(output))
+    .pipe(gulp.dest(getOut('/lib')))
     .on('end', cb)
 })
 
@@ -80,7 +80,7 @@ gulp.task('ts', function (cb) {
       console.log("::compile typescript fail::")
       console.log(err)
     })
-    .pipe(gulp.dest(output))
+    .pipe(gulp.dest(getOut('/lib')))
     .on('end', cb)
 })
 
@@ -94,7 +94,7 @@ gulp.task('copy', function (cb) {
     ],
     cwd: target
   })
-    .pipe(gulp.dest(output))
+    .pipe(gulp.dest(getOut('/lib')))
     .on('end', cb)
 })
 
@@ -106,30 +106,29 @@ gulp.task('js', function (cb) {
       '**/*.jsx'
     ],
     {
-      cwd: output
+      cwd: getOut('/lib')
     }
   )
     .pipe(babel(
       {
-        configFile: getProjectPath('.babelrc'),
-        // presets: [
-        //   '@babel/preset-env'
-        // ],
-        // plugins: ['@babel/transform-runtime']
+        configFile: pathInfo.babelConfigFile,
+        cwd: getProjectPath()
       }
     ))
-    .pipe(gulp.dest(output))
+    .pipe(gulp.dest(getOut('/lib')))
     .on('end', cb)
 })
 
 // 删除jsx
 gulp.task('cleanjsx', function (cb) {
-  rimraf.sync(getOut('/**/*.jsx'))
+  rimraf.sync(getOut('/lib/**/*.jsx'))
   cb()
 })
 
 gulp.task('clean', function (cb) {
-  rimraf.sync(output)
+  rimraf.sync(getOut('/lib'))
+  rimraf.sync(getOut('/es'))
+  rimraf.sync(getOut('/dist'))
   cb()
 })
 

@@ -3,6 +3,7 @@ const fs = require('fs')
 const __cwd = process.cwd()
 
 const TSCONFIGJSON = 'tsconfig.json'
+const BABELRC = '.babelrc'
 
 function getProjectPath(...filePath) {
   return path.join(__cwd, ...filePath);
@@ -17,9 +18,10 @@ function projectFileExists (...path) {
 }
 
 const pathInfo = {
-  target: getProjectPath('./target'),
-  output: getProjectPath('./output'),
-  tsconfigFile: projectFileExists(TSCONFIGJSON) ? getProjectPath(TSCONFIGJSON) : getPath(TSCONFIGJSON)
+  target: getProjectPath('./src'),
+  output: getProjectPath('./'),
+  tsconfigFile: projectFileExists(TSCONFIGJSON) ? getProjectPath(TSCONFIGJSON) : getPath(TSCONFIGJSON),
+  babelConfigFile: projectFileExists(BABELRC) ? getProjectPath(BABELRC) : getPath(BABELRC)
 }
 
 const appName = projectFileExists('package.json') ? require(getProjectPath('package.json')).name : 'my-library'
