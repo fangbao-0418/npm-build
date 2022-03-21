@@ -1,0 +1,11 @@
+{
+  "name": "ant-template",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "template"
+  ],
+  "author": "",
+  "license": "ISC",
+  "gitHead": "571e631a140346416c81755f2755e7d8c5d8542b"
+}
