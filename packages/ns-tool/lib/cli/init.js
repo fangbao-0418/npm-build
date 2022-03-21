@@ -25,7 +25,7 @@ function init () {
 
   const templateDir = path.join(templatePath, 'template');
   if (fs.existsSync(templateDir)) {
-    fs.copySync(templateDir, appPath + '/src');
+    fs.copySync(templateDir, appPath);
     spawn.sync(command, ['install'], {
       stdio: 'inherit',
     });
