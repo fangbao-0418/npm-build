@@ -22,7 +22,7 @@ gulp.task('dist', async function (done) {
   const resolve = require('rollup-plugin-node-resolve')
   const commonjs = require('rollup-plugin-commonjs')
   const bundle = await rollup.rollup({
-    input: getOut('/'),
+    input: getOut('/lib'),
     external: [
       'react'
     ],
