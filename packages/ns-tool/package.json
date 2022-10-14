@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "node lib/cli/build.js",
-    "init": "node lib/cli/init.js"
+    "init": "node lib/cli/init.js",
+    "install": "yarn install"
   },
   "files": [
     "lib",

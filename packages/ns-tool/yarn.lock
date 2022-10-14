@@ -1052,10 +1052,10 @@ ansi-wrap@0.1.0, ansi-wrap@^0.1.0:
   resolved "https://registry.npmjs.org/ansi-wrap/-/ansi-wrap-0.1.0.tgz#a82250ddb0015e9a27ca82e82ea603bbfa45efaf"
   integrity sha1-qCJQ3bABXponyoLoLqYDu/pF768=
 
-ant-template@^1.0.1-alpha.1:
-  version "1.0.1-alpha.1"
-  resolved "https://registry.npmjs.org/ant-template/-/ant-template-1.0.1-alpha.1.tgz#1ef9528e95f3ddfa5097f63e0fde7e7ef5ff5705"
-  integrity sha512-kmpw11MA7qI564T6zHEJ1AHRw3J5loHYvID4cLoAyRlV9f5BcV6qRjubUkDhTuN51fCCz+E7BYHtZ3ffSgIFOA==
+ant-template@^1.0.1-alpha.2:
+  version "1.0.1-alpha.2"
+  resolved "https://registry.yarnpkg.com/ant-template/-/ant-template-1.0.1-alpha.2.tgz#3cb370899fb3f380df1d2910b66b850f23537492"
+  integrity sha512-nUkBB9SCkTVOjCcOdnn+N4smHwOylRLV8MZKyNeHF30HRDIR5ZaBZ7SGwE0WdXYD6A8Bske6sQGZ43xHzHwmjA==
 
 anymatch@^2.0.0:
   version "2.0.0"
