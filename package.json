@@ -2,7 +2,8 @@
   "name": "npm-build",
   "private": true,
   "scripts": {
-    "install": "npx lerna run install"
+    "install": "npx lerna run install",
+    "publish": "npx lerna version --no-private"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
