@@ -134,10 +134,15 @@ gulp.task('clean', function (cb) {
   cb()
 })
 
-const build = series(['clean', 'copy', 'ts', 'js', 'cleanjsx', 'less', 'dist'])
-
 gulp.on('task_start', (options) => {
   target = options.target
   output = options.output
-  build()
+  dist = !!options.dist
+  if (dist) {
+    const build = series(['clean', 'copy', 'ts', 'js', 'cleanjsx', 'less', 'dist'])
+    build()
+  } else {
+    const build = series(['clean', 'copy', 'ts', 'js', 'cleanjsx', 'less'])
+    build()
+  }
 })
