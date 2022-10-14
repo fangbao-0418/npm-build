@@ -48,7 +48,9 @@ gulp.task('less', function (cb) {
   var postcss = require('gulp-postcss')
   var autoprefixer = require('autoprefixer')
   gulp.src(getSrc('/**/*.less'))
-    .pipe(less())
+    .pipe(less({
+      javascriptEnabled: true
+    }))
     .pipe(postcss([ autoprefixer() ]))
     .pipe(gulp.dest(getOut('/lib')))
     .on('end', cb)
