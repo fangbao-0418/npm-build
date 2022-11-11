@@ -138,6 +138,21 @@ gulp.on('task_start', (options) => {
   target = options.target
   output = options.output
   dist = !!options.dist
+  watch = !!options.watch
+  if (watch) {
+    const buildJs = series(['copy', 'ts', 'js', 'cleanjsx'])
+    const buildCss = series(['copy', 'less'])
+    gulp.watch([`${target}/**/*.tsx`, `${target}/**/*.ts`, `${target}/**/*.js`, `${target}/**/*.jsx`], (cb) => {
+      buildJs()
+      console.log('\x1B[32m%s\x1B[39m', 'compile javascript ok')
+      cb()
+    })
+    gulp.watch([`${target}/**/*.less`], (cb) => {
+      buildCss()
+      console.log('\x1B[32m%s\x1B[39m', 'compile css ok')
+      cb()
+    })
+  }
   if (dist) {
     const build = series(['clean', 'copy', 'ts', 'js', 'cleanjsx', 'less', 'dist'])
     build()

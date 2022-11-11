@@ -1,6 +1,6 @@
 {
   "name": "ns-tool",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "main": "lib/cli/build.js",
   "license": "MIT",
   "bin": {
@@ -9,8 +9,7 @@
   },
   "scripts": {
     "build": "node lib/cli/build.js",
-    "init": "node lib/cli/init.js",
-    "install": "yarn install"
+    "init": "node lib/cli/init.js"
   },
   "files": [
     "lib",
