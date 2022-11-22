@@ -47,11 +47,26 @@ gulp.task('dist', async function (done) {
 gulp.task('less', function (cb) {
   var postcss = require('gulp-postcss')
   var autoprefixer = require('autoprefixer')
+
+  function callback(file) {
+    const plugins = [
+      autoprefixer(),
+    ]
+    if (/m(odule)?\.less/.test(file.extname)) {
+      plugins.push(
+        require('postcss-modules')
+      )
+    }
+    return {
+      plugins
+    }
+  }
+
   gulp.src(getSrc('/**/*.less'))
     .pipe(less({
       javascriptEnabled: true
     }))
-    .pipe(postcss([ autoprefixer() ]))
+    .pipe(postcss(callback))
     .pipe(gulp.dest(getOut('/lib')))
     .on('end', cb)
 })
