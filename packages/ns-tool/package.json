@@ -1,6 +1,6 @@
 {
   "name": "ns-tool",
-  "version": "1.0.6",
+  "version": "1.0.7-alpha.0",
   "main": "lib/cli/build.js",
   "license": "MIT",
   "bin": {
