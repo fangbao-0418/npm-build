@@ -85,6 +85,7 @@ gulp.task('ts', function (cb) {
     jsx: 'react',
     esModuleInterop: true,
     moduleResolution: "Node",
+    skipLibCheck: true,
     baseUrl: getProjectPath('./'),
     project: getProjectPath('./'),
   })
