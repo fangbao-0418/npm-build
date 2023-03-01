@@ -6,6 +6,8 @@ const babel = require('gulp-babel')
 const rollup = require('rollup')
 const { pathInfo, appName, getProjectPath } = require('./utils/projectHelper')
 const { uglify } = require('rollup-plugin-uglify')
+const NpmImportPlugin = require("less-plugin-npm-import")
+const gulpEsbuild = require('gulp-esbuild')
 
 let target = ''
 let output = ''
@@ -64,7 +66,12 @@ gulp.task('less', function (cb) {
 
   gulp.src(getSrc('/**/*.less'))
     .pipe(less({
-      javascriptEnabled: true
+      javascriptEnabled: true,
+      plugins: [
+        new NpmImportPlugin({
+          prefix: '~'
+        })
+      ]
     }))
     .pipe(postcss(callback))
     .pipe(gulp.dest(getOut('/lib')))
@@ -102,6 +109,45 @@ gulp.task('ts', function (cb) {
     .on('end', cb)
 })
 
+// js/ts生成es
+gulp.task('es', function (cb) {
+  return gulp.src(getSrc('/**/*.[jt]s?(x)'), {
+    cwd: getProjectPath('./'),
+    ignore: [
+      '**/*.d.ts',
+    ],
+  })
+  .pipe(gulpEsbuild({
+      bundle: false,
+      write: false,
+      charset: 'utf8',
+      treeShaking: true,
+      platform: 'browser',
+      jsx: 'transform',
+      tsconfig: pathInfo.tsconfigFile,
+      target: 'es6',
+      loader: {
+          '.tsx': 'tsx',
+          '.ts': 'ts'
+      },
+  }))
+  .pipe(gulp.dest(getOut('/es')))
+})
+
+gulp.task('es-copy', function (cb) {
+  gulp.src([
+    '**/*'
+  ], {
+    ignore: [
+      '**/*.js'
+    ],
+    cwd:getOut('/lib')
+  })
+    .pipe(gulp.dest(getOut('/es')))
+    .on('end', cb)
+})
+
+
 gulp.task('copy', function (cb) {
   gulp.src([
    '**/*'
@@ -114,6 +160,14 @@ gulp.task('copy', function (cb) {
   })
     .pipe(gulp.dest(getOut('/lib')))
     .on('end', cb)
+  
+  gulp.src([
+    '**/*.d.ts'
+    ], {
+      cwd: target
+    })
+      .pipe(gulp.dest(getOut('/lib')))
+      .on('end', cb)
 })
 
 // 编译js
@@ -173,7 +227,7 @@ gulp.on('task_start', (options) => {
     const build = series(['clean', 'copy', 'ts', 'js', 'cleanjsx', 'less', 'dist'])
     build()
   } else {
-    const build = series(['clean', 'copy', 'ts', 'js', 'cleanjsx', 'less'])
+    const build = series(['clean', 'copy', 'ts', 'js', 'es', 'es-copy', 'cleanjsx', 'less'])
     build()
   }
 })
