@@ -210,7 +210,7 @@ gulp.on('task_start', (options) => {
   dist = !!options.dist
   watch = !!options.watch
   if (watch) {
-    const buildJs = series(['copy', 'ts', 'js', 'cleanjsx'])
+    const buildJs = series(['copy', 'ts', 'js', 'cleanjsx', 'es', 'es-copy'])
     const buildCss = series(['copy', 'less'])
     gulp.watch([`${target}/**/*.tsx`, `${target}/**/*.ts`, `${target}/**/*.js`, `${target}/**/*.jsx`], (cb) => {
       buildJs()
