@@ -86,6 +86,7 @@ gulp.task('ts', function (cb) {
     rootDir: getProjectPath('./'),
     lib: [
       'es2015',
+      'es2017',
       'DOM'
     ],
     allowSyntheticDefaultImports: true,
